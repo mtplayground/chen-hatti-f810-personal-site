@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">Hero placeholder image</title>
+  <desc id="desc">Abstract academic network placeholder with blue accent nodes.</desc>
+  <rect width="1200" height="720" fill="#f8fafc"/>
+  <path d="M0 560C180 500 300 610 480 540C690 460 780 260 1200 310V720H0Z" fill="#dbeafe"/>
+  <path d="M0 610C190 570 350 650 550 595C760 535 910 395 1200 445V720H0Z" fill="#bfdbfe"/>
+  <g fill="none" stroke="#2563eb" stroke-width="4" stroke-linecap="round" opacity="0.58">
+    <path d="M214 252L380 186L540 274L718 160L918 244"/>
+    <path d="M380 186L450 402L718 160"/>
+    <path d="M540 274L690 412L918 244"/>
+    <path d="M450 402L690 412L842 520"/>
+  </g>
+  <g fill="#2563eb">
+    <circle cx="214" cy="252" r="16"/>
+    <circle cx="380" cy="186" r="18"/>
+    <circle cx="540" cy="274" r="14"/>
+    <circle cx="718" cy="160" r="20"/>
+    <circle cx="918" cy="244" r="16"/>
+    <circle cx="450" cy="402" r="15"/>
+    <circle cx="690" cy="412" r="17"/>
+    <circle cx="842" cy="520" r="14"/>
+  </g>
+  <text x="80" y="650" fill="#1e3a8a" font-family="Arial, Helvetica, sans-serif" font-size="42" font-weight="700">Hero image placeholder</text>
+</svg>

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="320" viewBox="0 0 320 320" role="img" aria-labelledby="title desc">
+  <title id="title">Award logo placeholder</title>
+  <desc id="desc">Medal-shaped award logo placeholder.</desc>
+  <rect width="320" height="320" rx="40" fill="#f8fafc"/>
+  <path d="M116 44H204L188 126H132L116 44Z" fill="#bfdbfe"/>
+  <path d="M132 44L160 126L188 44" fill="#2563eb"/>
+  <circle cx="160" cy="190" r="78" fill="#2563eb"/>
+  <circle cx="160" cy="190" r="52" fill="#dbeafe"/>
+  <path d="M160 148L174 176L205 180L182 202L188 234L160 218L132 234L138 202L115 180L146 176L160 148Z" fill="#1e3a8a"/>
+</svg>

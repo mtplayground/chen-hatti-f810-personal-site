@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="320" viewBox="0 0 320 320" role="img" aria-labelledby="title desc">
+  <title id="title">School logo placeholder</title>
+  <desc id="desc">Shield-shaped school logo placeholder.</desc>
+  <rect width="320" height="320" rx="40" fill="#eff6ff"/>
+  <path d="M160 48L256 86V154C256 218 216 264 160 288C104 264 64 218 64 154V86L160 48Z" fill="#2563eb"/>
+  <path d="M160 82L222 106V158C222 204 198 238 160 258C122 238 98 204 98 158V106L160 82Z" fill="#dbeafe"/>
+  <path d="M122 154H198M122 190H198M160 118V230" stroke="#1e3a8a" stroke-width="12" stroke-linecap="round"/>
+</svg>

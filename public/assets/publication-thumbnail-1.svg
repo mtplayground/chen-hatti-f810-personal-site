@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="420" viewBox="0 0 640 420" role="img" aria-labelledby="title desc">
+  <title id="title">Publication thumbnail placeholder one</title>
+  <desc id="desc">Paper thumbnail placeholder with abstract chart lines.</desc>
+  <rect width="640" height="420" rx="24" fill="#ffffff"/>
+  <rect x="40" y="44" width="560" height="332" rx="18" fill="#f8fafc" stroke="#e2e8f0" stroke-width="4"/>
+  <path d="M96 294L188 236L278 256L370 172L520 124" fill="none" stroke="#2563eb" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+  <g fill="#2563eb">
+    <circle cx="96" cy="294" r="16"/>
+    <circle cx="188" cy="236" r="16"/>
+    <circle cx="278" cy="256" r="16"/>
+    <circle cx="370" cy="172" r="16"/>
+    <circle cx="520" cy="124" r="16"/>
+  </g>
+  <text x="64" y="356" fill="#64748b" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700">Publication thumbnail</text>
+</svg>
