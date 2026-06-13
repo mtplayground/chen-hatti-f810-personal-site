@@ -39,7 +39,7 @@ export function ServicesSection() {
               key={group.id}
             >
               <div className="mb-card flex items-center gap-4">
-                <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full border border-academic-border bg-academic-accent-subtle text-academic-accent dark:border-academic-dark-border dark:bg-academic-dark-surface-muted dark:text-academic-dark-accent">
+                <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full border border-academic-border bg-academic-accent-subtle text-academic-accent dark:border-academic-dark-border dark:bg-academic-dark-accent-soft dark:text-academic-dark-accent">
                   <ServiceIcon icon={group.icon} />
                 </div>
                 <h3 className="text-lg font-semibold text-academic-text dark:text-academic-dark-text">

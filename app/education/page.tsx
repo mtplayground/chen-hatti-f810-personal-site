@@ -47,7 +47,7 @@ export default function EducationPage() {
                         {degree}
                       </p>
                     </div>
-                    <p className="rounded-full bg-academic-accent-subtle px-3 py-1 text-xs font-semibold uppercase tracking-normal text-academic-accent dark:bg-academic-dark-surface-muted dark:text-academic-dark-accent">
+                    <p className="rounded-full bg-academic-accent-subtle px-3 py-1 text-xs font-semibold uppercase tracking-normal text-academic-accent dark:bg-academic-dark-accent-soft dark:text-academic-dark-accent">
                       {dates}
                     </p>
                   </div>

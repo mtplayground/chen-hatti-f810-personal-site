@@ -70,7 +70,7 @@ export default function BlogPage() {
                     </p>
                     <div className="mt-4 flex flex-wrap items-center gap-2">
                       {blog.readingTime ? (
-                        <span className="rounded-full bg-academic-accent-subtle px-3 py-1 text-xs font-semibold uppercase tracking-normal text-academic-accent dark:bg-academic-dark-surface-muted dark:text-academic-dark-accent">
+                        <span className="rounded-full bg-academic-accent-subtle px-3 py-1 text-xs font-semibold uppercase tracking-normal text-academic-accent dark:bg-academic-dark-accent-soft dark:text-academic-dark-accent">
                           {blog.readingTime}
                         </span>
                       ) : null}

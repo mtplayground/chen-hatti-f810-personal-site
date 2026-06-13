@@ -63,7 +63,7 @@ export function HeroSection() {
             </div>
           </div>
 
-          <div className="relative min-h-[280px] overflow-hidden rounded-card bg-academic-accent-subtle dark:bg-academic-dark-surface-muted sm:min-h-[360px]">
+          <div className="relative min-h-[280px] overflow-hidden rounded-card bg-academic-accent-subtle dark:bg-academic-dark-accent-soft sm:min-h-[360px]">
             <Image
               alt={profile.heroImage.alt}
               className="object-cover"

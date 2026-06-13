@@ -11,7 +11,7 @@ export function AboutSection() {
       <Card>
         <div className="grid gap-card-lg lg:grid-cols-[320px_minmax(0,1fr)] lg:items-center">
           <div className="mx-auto w-full max-w-[320px]">
-            <div className="relative aspect-square overflow-hidden rounded-full border border-academic-border bg-academic-accent-subtle shadow-card dark:border-academic-dark-border dark:bg-academic-dark-surface-muted">
+            <div className="relative aspect-square overflow-hidden rounded-full border border-academic-border bg-academic-accent-subtle shadow-card dark:border-academic-dark-border dark:bg-academic-dark-accent-soft">
               <Image
                 alt={profile.avatar.alt}
                 className="object-cover"

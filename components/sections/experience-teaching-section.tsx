@@ -90,7 +90,7 @@ export function ExperienceTeachingSection() {
           <ul className="space-y-card">
             {teaching.map((item) => (
               <li className="flex gap-card" key={item.id}>
-                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-card border border-academic-border bg-academic-accent-subtle text-academic-accent dark:border-academic-dark-border dark:bg-academic-dark-surface-muted dark:text-academic-dark-accent">
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-card border border-academic-border bg-academic-accent-subtle text-academic-accent dark:border-academic-dark-border dark:bg-academic-dark-accent-soft dark:text-academic-dark-accent">
                   <BookOpen aria-hidden="true" className="h-6 w-6" strokeWidth={1.8} />
                 </div>
                 <div>
