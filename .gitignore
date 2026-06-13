@@ -11,3 +11,14 @@ node_modules/
 .pipeline-state.json
 .gitkeep
 .progress
+.env.production
+.db_decision
+.storage_decision
+.next/
+out/
+dist/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+*.tsbuildinfo
