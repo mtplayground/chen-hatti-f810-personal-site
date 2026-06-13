@@ -5,3 +5,4 @@ export { ExperienceTeachingSection } from "./experience-teaching-section";
 export { HeroSection } from "./hero-section";
 export { NewsTimelineSection } from "./news-timeline-section";
 export { SelectedPublicationsSection } from "./selected-publications-section";
+export { ServicesSection } from "./services-section";
