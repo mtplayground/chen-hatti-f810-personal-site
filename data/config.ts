@@ -21,13 +21,13 @@ export const siteContent: SiteContent = {
     ],
     avatar: {
       src: "/assets/profile-placeholder.svg",
-      alt: "Profile photo placeholder",
+      alt: "Portrait of Your Name",
       width: 640,
       height: 640
     },
     heroImage: {
       src: "/assets/hero-placeholder.svg",
-      alt: "Hero image placeholder",
+      alt: "Research network illustration",
       width: 1200,
       height: 720
     },
@@ -103,7 +103,7 @@ export const siteContent: SiteContent = {
       endDate: "Present",
       logo: {
         src: "/assets/school-logo-placeholder.svg",
-        alt: "School logo placeholder",
+        alt: "Your University logo",
         width: 320,
         height: 320
       },
@@ -120,7 +120,7 @@ export const siteContent: SiteContent = {
       endDate: "2022",
       logo: {
         src: "/assets/school-logo-placeholder.svg",
-        alt: "School logo placeholder",
+        alt: "Previous University logo",
         width: 320,
         height: 320
       },
@@ -136,7 +136,7 @@ export const siteContent: SiteContent = {
       description: "Representative award entry for a fellowship, scholarship, or honor.",
       logo: {
         src: "/assets/award-logo-placeholder.svg",
-        alt: "Award logo placeholder",
+        alt: "Fellowship award mark",
         width: 320,
         height: 320
       }
@@ -149,7 +149,7 @@ export const siteContent: SiteContent = {
       description: "Representative award entry for a publication or presentation recognition.",
       logo: {
         src: "/assets/award-logo-placeholder.svg",
-        alt: "Award logo placeholder",
+        alt: "Best Paper Honorable Mention award mark",
         width: 320,
         height: 320
       }
@@ -172,7 +172,7 @@ export const siteContent: SiteContent = {
         "A short placeholder abstract summarizing the research question, method, and contribution.",
       thumbnail: {
         src: "/assets/publication-thumbnail-1.svg",
-        alt: "Publication thumbnail placeholder",
+        alt: "Line chart thumbnail for the human-centered AI systems paper",
         width: 640,
         height: 420
       },
@@ -194,7 +194,7 @@ export const siteContent: SiteContent = {
       abstract: "A representative journal publication entry for the selected publications section.",
       thumbnail: {
         src: "/assets/publication-thumbnail-2.svg",
-        alt: "Publication thumbnail placeholder",
+        alt: "Document cards thumbnail for the interactive data visualization paper",
         width: 640,
         height: 420
       },
@@ -213,7 +213,7 @@ export const siteContent: SiteContent = {
       type: "workshop",
       thumbnail: {
         src: "/assets/publication-thumbnail-3.svg",
-        alt: "Publication thumbnail placeholder",
+        alt: "Responsible computing publication thumbnail",
         width: 640,
         height: 420
       },

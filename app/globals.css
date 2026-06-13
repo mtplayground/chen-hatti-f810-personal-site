@@ -55,7 +55,27 @@
     text-decoration-color: currentColor;
   }
 
+  a:focus-visible,
+  button:focus-visible {
+    @apply outline outline-2 outline-offset-2 outline-academic-accent dark:outline-academic-dark-accent;
+  }
+
   ::selection {
     @apply bg-academic-accent-soft text-academic-text dark:bg-academic-dark-accent-soft dark:text-academic-dark-text;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      scroll-behavior: auto !important;
+      transition-duration: 0.01ms !important;
+    }
   }
 }
