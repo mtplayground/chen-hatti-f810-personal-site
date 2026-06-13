@@ -26,12 +26,12 @@ export function NewsTimelineSection() {
         title="News"
       />
 
-      <ol className="flex gap-card overflow-x-auto pb-3">
+      <ol className="grid gap-card md:flex md:overflow-x-auto md:pb-3">
         {news.map((item) => {
           const venueLink = getVenueLink(item);
 
           return (
-            <li className="relative min-w-[280px] flex-1 pl-8" key={item.id}>
+            <li className="relative pl-8 md:min-w-[280px] md:flex-1" key={item.id}>
               <div className="absolute left-0 top-2 h-[calc(100%-0.5rem)] w-px bg-academic-border dark:bg-academic-dark-border" />
               <div className="absolute left-[-5px] top-2 h-3 w-3 rounded-full border-2 border-academic-bg-subtle bg-academic-accent dark:border-academic-dark-bg dark:bg-academic-dark-accent" />
               <time
