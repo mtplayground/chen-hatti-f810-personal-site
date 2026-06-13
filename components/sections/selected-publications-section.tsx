@@ -112,13 +112,13 @@ export function SelectedPublicationsSection() {
       />
 
       <Card className="grid gap-card lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] lg:items-start">
-        <div className="grid grid-cols-2 gap-3">
+        <div className="grid gap-3 sm:grid-cols-2">
           {thumbnails.map((publication, index) =>
             publication.thumbnail ? (
               <div
                 className={[
                   "relative min-h-40 overflow-hidden rounded-card border border-academic-border bg-academic-bg-subtle dark:border-academic-dark-border dark:bg-academic-dark-surface-muted",
-                  index === 0 ? "col-span-2 aspect-[16/9]" : "aspect-[4/3]"
+                  index === 0 ? "aspect-[16/9] sm:col-span-2" : "aspect-[4/3]"
                 ]
                   .filter(Boolean)
                   .join(" ")}

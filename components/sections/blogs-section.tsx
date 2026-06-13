@@ -41,12 +41,12 @@ export function BlogsSection() {
         title="Blog"
       />
 
-      <div className="flex gap-card overflow-x-auto pb-3">
+      <div className="grid gap-card md:flex md:overflow-x-auto md:pb-3">
         {blogs.map((blog) => {
           const date = formatBlogDate(blog.date);
 
           return (
-            <Card className="min-w-[300px] flex-1" key={blog.id}>
+            <Card className="md:min-w-[300px] md:flex-1" key={blog.id}>
               <Link className="group flex h-full gap-card no-underline" href={blogHref(blog)}>
                 <time
                   className="flex h-24 w-20 shrink-0 flex-col items-center justify-center rounded-card border border-academic-border bg-academic-bg-subtle text-center dark:border-academic-dark-border dark:bg-academic-dark-surface-muted"
