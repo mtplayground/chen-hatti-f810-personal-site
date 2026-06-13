@@ -1,0 +1,39 @@
+Architecture plan for chen-hatti-f810-personal-site
+
+Product context
+- Academic personal website built as a Next.js App Router + TypeScript project.
+- Source of truth for naming/content should remain issue text, README, and any future PRODUCT.md. Current checkout has no PRODUCT.md.
+
+Module structure
+- app/
+  - layout.tsx: root HTML, theme bootstrap, shared shell.
+  - page.tsx: composed home page.
+  - publications/page.tsx, blog/page.tsx, research/page.tsx, news/page.tsx, education/page.tsx, awards/page.tsx, experience/page.tsx, teaching/page.tsx: list and overview pages.
+  - globals.css: Tailwind layers, base typography, global background and link styling.
+- components/
+  - layout/: Header, Footer, Container, ThemeProvider, ThemeToggle.
+  - sections/: Hero, About, NewsTimeline, EducationAwards, SelectedPublications, Blogs, ExperienceTeaching, Services.
+  - ui/: Card, SectionHeading, SocialButton, ViewAllLink and any small reusable controls.
+- data/
+  - config.ts: central placeholder content and site-level settings.
+  - types.ts: shared TypeScript interfaces for profile, socials, nav, research, news, education, awards, publications, blogs, experience, teaching, and services.
+- public/
+  - assets/: placeholder hero/profile/publication/logo imagery.
+  - cv.pdf: placeholder CV.
+
+Issue dependency map
+- Foundation: #1 initializes Next.js/TypeScript. #2 Tailwind theme, #3 icons/assets, #4 lint/format/global styles, #5 shared content types, #6 data/config.
+- Shell and primitives: #7 root layout/container, #8 dark-mode persistence, #9 header/nav, #10 footer, #11 reusable UI primitives.
+- Home sections: #12-#19 implement individual sections from shared config and primitives.
+- Composition: #20 assembles the home page after all sections exist.
+- Secondary pages: #21 introduces list-page layout and publications page; #22 blog, #23 research, #24 news/education/awards, #25 experience/teaching reuse that pattern.
+- Quality passes: #26 responsive QA, #27 dark-mode consistency, #28 interaction/accessibility polish, #29 production smoke test and README.
+
+Key design decisions
+- Keep content in `data/config.ts` so all pages and sections read from one typed source until a CMS or MDX layer is requested.
+- Use Tailwind class-based dark mode and a tiny client theme component that sets `document.documentElement.classList` from persisted preference before interactive controls render.
+- Prefer server components for static sections/pages; isolate client code to theme toggle and any future interactive widgets.
+- Use lucide-react for icons, Next Image for local assets, and semantic HTML landmarks for header, main, sections, nav, and footer.
+- Keep routes simple and stable: `/`, `/research`, `/publications`, `/blog`, `/news`, `/education`, `/awards`, `/experience`, `/teaching`.
+- Use academic visual tokens: white/light-gray surfaces, blue accent links/underlines, restrained card border/shadow/radius, readable typography, and mobile-first single-column collapse.
+- Verification path should progress from `npm install` and `npm run dev` in #1 to lint/build checks as tooling lands, ending with full production build and click-through in #29.
