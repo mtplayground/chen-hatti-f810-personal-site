@@ -1,0 +1,46 @@
+import type { ReactNode } from "react";
+
+interface SectionHeadingProps {
+  title: string;
+  eyebrow?: string;
+  description?: string;
+  action?: ReactNode;
+  className?: string;
+}
+
+export function SectionHeading({
+  title,
+  eyebrow,
+  description,
+  action,
+  className
+}: SectionHeadingProps) {
+  const classes = [
+    "mb-card flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between",
+    className
+  ]
+    .filter(Boolean)
+    .join(" ");
+
+  return (
+    <div className={classes}>
+      <div>
+        {eyebrow ? (
+          <p className="mb-2 text-sm font-semibold uppercase tracking-normal text-academic-accent dark:text-academic-dark-accent">
+            {eyebrow}
+          </p>
+        ) : null}
+        <h2 className="text-2xl font-bold text-academic-text dark:text-academic-dark-text">
+          {title}
+        </h2>
+        <div className="mt-3 h-1 w-12 rounded-full bg-academic-accent dark:bg-academic-dark-accent" />
+        {description ? (
+          <p className="mt-4 max-w-3xl text-base text-academic-muted dark:text-academic-dark-muted">
+            {description}
+          </p>
+        ) : null}
+      </div>
+      {action ? <div className="shrink-0">{action}</div> : null}
+    </div>
+  );
+}
