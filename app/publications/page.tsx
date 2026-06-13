@@ -137,7 +137,7 @@ export default function PublicationsPage() {
 
               <div>
                 <div className="flex flex-wrap items-center gap-2">
-                  <span className="rounded-full bg-academic-accent-subtle px-3 py-1 text-xs font-semibold uppercase tracking-normal text-academic-accent dark:bg-academic-dark-surface-muted dark:text-academic-dark-accent">
+                  <span className="rounded-full bg-academic-accent-subtle px-3 py-1 text-xs font-semibold uppercase tracking-normal text-academic-accent dark:bg-academic-dark-accent-soft dark:text-academic-dark-accent">
                     {publication.type}
                   </span>
                   {publication.selected ? (

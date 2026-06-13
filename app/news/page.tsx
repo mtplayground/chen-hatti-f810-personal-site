@@ -53,7 +53,7 @@ export default function NewsPage() {
                 className="flex items-center gap-3 text-sm font-semibold text-academic-accent dark:text-academic-dark-accent sm:block"
                 dateTime={item.date}
               >
-                <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-academic-accent-subtle text-academic-accent dark:bg-academic-dark-surface-muted dark:text-academic-dark-accent sm:mb-3">
+                <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-academic-accent-subtle text-academic-accent dark:bg-academic-dark-accent-soft dark:text-academic-dark-accent sm:mb-3">
                   <CalendarDays aria-hidden="true" className="h-5 w-5" strokeWidth={1.8} />
                 </span>
                 <span>{formatNewsDate(item.date)}</span>

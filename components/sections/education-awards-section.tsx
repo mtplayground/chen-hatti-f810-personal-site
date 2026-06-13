@@ -81,7 +81,7 @@ export function EducationAwardsSection() {
           </div>
 
           <div className="flex gap-card">
-            <div className="flex h-20 w-20 shrink-0 items-center justify-center rounded-card border border-academic-border bg-academic-accent-subtle text-academic-accent dark:border-academic-dark-border dark:bg-academic-dark-surface-muted dark:text-academic-dark-accent">
+            <div className="flex h-20 w-20 shrink-0 items-center justify-center rounded-card border border-academic-border bg-academic-accent-subtle text-academic-accent dark:border-academic-dark-border dark:bg-academic-dark-accent-soft dark:text-academic-dark-accent">
               <Trophy aria-hidden="true" className="h-9 w-9" strokeWidth={1.8} />
             </div>
             <div>

@@ -28,7 +28,7 @@ export default function AwardsPage() {
                   />
                 </div>
               ) : (
-                <div className="flex h-24 w-24 items-center justify-center rounded-card border border-academic-border bg-academic-accent-subtle text-academic-accent dark:border-academic-dark-border dark:bg-academic-dark-surface-muted dark:text-academic-dark-accent">
+                <div className="flex h-24 w-24 items-center justify-center rounded-card border border-academic-border bg-academic-accent-subtle text-academic-accent dark:border-academic-dark-border dark:bg-academic-dark-accent-soft dark:text-academic-dark-accent">
                   <Trophy aria-hidden="true" className="h-10 w-10" strokeWidth={1.8} />
                 </div>
               )}
@@ -43,7 +43,7 @@ export default function AwardsPage() {
                       {award.organization}
                     </p>
                   </div>
-                  <p className="rounded-full bg-academic-accent-subtle px-3 py-1 text-xs font-semibold uppercase tracking-normal text-academic-accent dark:bg-academic-dark-surface-muted dark:text-academic-dark-accent">
+                  <p className="rounded-full bg-academic-accent-subtle px-3 py-1 text-xs font-semibold uppercase tracking-normal text-academic-accent dark:bg-academic-dark-accent-soft dark:text-academic-dark-accent">
                     {award.year}
                   </p>
                 </div>

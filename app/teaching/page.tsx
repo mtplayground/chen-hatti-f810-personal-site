@@ -52,7 +52,7 @@ export default function TeachingPage() {
         {siteContent.teaching.map((item) => (
           <li key={item.id}>
             <Card className="grid gap-card sm:grid-cols-[72px_minmax(0,1fr)]">
-              <div className="flex h-14 w-14 items-center justify-center rounded-card border border-academic-border bg-academic-accent-subtle text-academic-accent dark:border-academic-dark-border dark:bg-academic-dark-surface-muted dark:text-academic-dark-accent">
+              <div className="flex h-14 w-14 items-center justify-center rounded-card border border-academic-border bg-academic-accent-subtle text-academic-accent dark:border-academic-dark-border dark:bg-academic-dark-accent-soft dark:text-academic-dark-accent">
                 <BookOpen aria-hidden="true" className="h-7 w-7" strokeWidth={1.8} />
               </div>
 
