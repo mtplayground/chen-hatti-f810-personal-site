@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Container } from "../components/layout/container";
+import { Footer } from "../components/layout/footer";
 import { Header } from "../components/layout/header";
 import { ThemeProvider } from "../components/layout/theme-provider";
 import "./globals.css";
@@ -18,9 +19,12 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body>
         <ThemeProvider>
-          <div className="min-h-screen bg-academic-bg-subtle text-academic-text dark:bg-academic-dark-bg dark:text-academic-dark-text">
+          <div className="flex min-h-screen flex-col bg-academic-bg-subtle text-academic-text dark:bg-academic-dark-bg dark:text-academic-dark-text">
             <Header />
-            <Container>{children}</Container>
+            <div className="flex-1">
+              <Container>{children}</Container>
+            </div>
+            <Footer />
           </div>
         </ThemeProvider>
       </body>
