@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Container } from "../components/layout/container";
 import { ThemeProvider } from "../components/layout/theme-provider";
+import { ThemeToggle } from "../components/theme/theme-toggle";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -18,7 +19,12 @@ export default function RootLayout({
       <body>
         <ThemeProvider>
           <div className="min-h-screen bg-academic-bg-subtle text-academic-text dark:bg-academic-dark-bg dark:text-academic-dark-text">
-            <Container>{children}</Container>
+            <Container>
+              <div className="mb-card flex justify-end">
+                <ThemeToggle />
+              </div>
+              {children}
+            </Container>
           </div>
         </ThemeProvider>
       </body>
