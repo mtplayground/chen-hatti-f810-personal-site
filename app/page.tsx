@@ -1,8 +1,25 @@
+import {
+  AboutSection,
+  BlogsSection,
+  EducationAwardsSection,
+  ExperienceTeachingSection,
+  HeroSection,
+  NewsTimelineSection,
+  SelectedPublicationsSection,
+  ServicesSection
+} from "../components/sections";
+
 export default function Home() {
   return (
-    <main>
-      <h1>chen-hatti-f810-personal-site</h1>
-      <p>Next.js App Router and TypeScript are ready.</p>
+    <main className="space-y-section">
+      <HeroSection />
+      <AboutSection />
+      <NewsTimelineSection />
+      <EducationAwardsSection />
+      <SelectedPublicationsSection />
+      <BlogsSection />
+      <ExperienceTeachingSection />
+      <ServicesSection />
     </main>
   );
 }
