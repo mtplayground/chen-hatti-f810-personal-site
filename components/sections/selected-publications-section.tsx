@@ -57,7 +57,7 @@ function PublicationLinks({ publication }: { publication: PublicationItem }) {
   }
 
   return (
-    <div className="mt-4 flex flex-wrap gap-2">
+    <div className="flex flex-wrap gap-2 lg:flex-col lg:items-end">
       {links?.pdf ? (
         <a className={visibleLinkClass} href={links.pdf}>
           <FileText aria-hidden="true" className="h-4 w-4" strokeWidth={1.8} />
@@ -97,7 +97,6 @@ function PublicationLinks({ publication }: { publication: PublicationItem }) {
 
 export function SelectedPublicationsSection() {
   const publications = selectedPublications();
-  const thumbnails = publications.filter((publication) => publication.thumbnail).slice(0, 3);
 
   if (publications.length === 0) {
     return null;
@@ -111,54 +110,45 @@ export function SelectedPublicationsSection() {
         title="Selected Publications"
       />
 
-      <Card className="grid gap-card lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] lg:items-start">
-        <div className="grid gap-3 sm:grid-cols-2">
-          {thumbnails.map((publication, index) =>
-            publication.thumbnail ? (
-              <div
-                className={[
-                  "relative min-h-40 overflow-hidden rounded-card border border-academic-border bg-academic-bg-subtle dark:border-academic-dark-border dark:bg-academic-dark-surface-muted",
-                  index === 0 ? "aspect-[16/9] sm:col-span-2" : "aspect-[4/3]"
-                ]
-                  .filter(Boolean)
-                  .join(" ")}
-                key={publication.id}
-              >
-                <Image
-                  alt={publication.thumbnail.alt}
-                  className="object-cover"
-                  fill
-                  sizes={
-                    index === 0
-                      ? "(min-width: 1024px) 430px, 100vw"
-                      : "(min-width: 1024px) 210px, 50vw"
-                  }
-                  src={publication.thumbnail.src}
-                />
-              </div>
-            ) : null
-          )}
-        </div>
-
-        <div className="space-y-card">
+      <Card>
+        <div className="divide-y divide-academic-border dark:divide-academic-dark-border">
           {publications.map((publication) => (
             <article
-              className="border-b border-academic-border pb-card last:border-b-0 last:pb-0 dark:border-academic-dark-border"
+              className="grid gap-card py-card first:pt-0 last:pb-0 md:grid-cols-[150px_minmax(0,1fr)] lg:grid-cols-[160px_minmax(0,1fr)_auto] lg:items-start"
               key={publication.id}
             >
-              <h3 className="text-xl font-semibold leading-snug text-academic-accent dark:text-academic-dark-accent">
-                {publication.title}
-              </h3>
-              <PublicationAuthors publication={publication} />
-              <p className="mt-2 text-sm font-semibold text-academic-text dark:text-academic-dark-text">
-                {publication.venue} - {publication.year}
-              </p>
-              {publication.abstract ? (
-                <p className="mt-3 text-sm text-academic-muted dark:text-academic-dark-muted">
-                  {publication.abstract}
+              {publication.thumbnail ? (
+                <div className="relative aspect-[16/10] overflow-hidden rounded-card border border-academic-border bg-academic-bg-subtle dark:border-academic-dark-border dark:bg-academic-dark-surface-muted">
+                  <Image
+                    alt={publication.thumbnail.alt}
+                    className="object-cover"
+                    fill
+                    sizes="(min-width: 1024px) 160px, (min-width: 768px) 150px, 100vw"
+                    src={publication.thumbnail.src}
+                  />
+                </div>
+              ) : (
+                <div className="hidden rounded-card border border-academic-border bg-academic-bg-subtle md:block dark:border-academic-dark-border dark:bg-academic-dark-surface-muted" />
+              )}
+
+              <div className="min-w-0">
+                <h3 className="text-xl font-semibold leading-snug text-academic-accent dark:text-academic-dark-accent">
+                  {publication.title}
+                </h3>
+                <PublicationAuthors publication={publication} />
+                <p className="mt-2 text-sm font-semibold text-academic-text dark:text-academic-dark-text">
+                  {publication.venue} - {publication.year}
                 </p>
-              ) : null}
-              <PublicationLinks publication={publication} />
+                {publication.abstract ? (
+                  <p className="mt-3 text-sm text-academic-muted dark:text-academic-dark-muted">
+                    {publication.abstract}
+                  </p>
+                ) : null}
+              </div>
+
+              <div className="lg:min-w-28">
+                <PublicationLinks publication={publication} />
+              </div>
             </article>
           ))}
         </div>
