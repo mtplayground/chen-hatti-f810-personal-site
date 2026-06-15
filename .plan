@@ -1,68 +1,52 @@
-Architecture plan for issues #59-#68
+Architecture plan for issues #79-#82
 
 Project shape
-- Next.js App Router, React, TypeScript, and Tailwind CSS academic personal site.
-- Content remains centralized in `data/config.ts` with shared interfaces in `data/types.ts`.
-- The redesign is presentation-only: no database, auth, API, or upload architecture is required.
+- `chen-hatti-f810-personal-site` is a static academic personal website built with Next.js App Router, React, TypeScript, and Tailwind CSS.
+- The requested work is presentation/content-asset focused only: no database, auth flow, API route, or runtime object-storage feature is needed.
+- Content remains centralized in `data/config.ts` and typed by `data/types.ts`; static assets live in `public/assets`.
 
 Module structure and file organization
-- `app/page.tsx`
-  - Owns homepage section order. For #61 remove the standalone `AboutSection` from the homepage composition once its content is folded into `HeroSection`.
-  - For #59/#67 reorder so `BlogsSection` renders last after `ServicesSection`.
 - `app/globals.css`
-  - Global base styles only. Keep global behavior such as focus states and reduced-motion handling here.
+  - Primary target for #79 base typography. Lower the global `body` font size/line-height if the issue should affect all pages consistently.
+  - Preserve global focus states, selection styling, and `prefers-reduced-motion` behavior.
 - `tailwind.config.ts`
-  - Main theme-token work for #59: compact section spacing, thinner card borders, smaller card radius, and weaker/no shadows.
-  - Preserve the existing `academic` palette names so components do not need broad semantic renames.
-- `components/layout/header.tsx`
-  - Main target for #60. Keep active route detection and external CV behavior, but restyle to compact reference layout.
-- `components/layout/footer.tsx`
-  - Main target for #68. Keep social link rendering; replace right-side profile tagline with the requested `Built with ❤️ and research.` copy.
-- `components/layout/container.tsx`
-  - Adjust vertical padding and max-width only if required by #59's global density change.
-- `components/ui/card.tsx`
-  - Main shared primitive for #59. Tune radius, border, padding, shadow, and hover treatment once so downstream section issues inherit the lighter style.
-- `components/ui/section-heading.tsx` and `components/ui/view-all-link.tsx`
-  - Keep common title/action pattern; tighten margins/gaps as part of #59 if needed.
+  - Secondary target for #79 if compact typography also benefits from smaller shared spacing tokens (`section`, `card`, etc.). Avoid broad palette changes.
+- `components/ui/section-heading.tsx`
+  - Adjust section heading size/margins for #79 so all homepage section titles step down consistently.
 - `components/sections/hero-section.tsx`
-  - Main target for #61. Convert to three-zone layout: avatar left, identity/about/socials center, hero image right.
-  - Reuse `profile.avatar`, `profile.heroImage`, `profile.bio`, `profile.researchIntro`, `profile.socials`, and `profile.cvHref` from `siteContent`.
-- `components/sections/about-section.tsx`
-  - Leave available for secondary reuse, but remove from homepage composition after #61 unless an issue explicitly deletes it.
+  - Adjust hero name/title/body text sizes for #79.
+  - No layout rewrite is required unless the typography reduction exposes spacing issues.
 - `components/sections/news-timeline-section.tsx`
-  - Main target for #62. Convert from horizontal scroll cards to full-width vertical timeline with date column, blue dot/line, text area, dividers, and existing view-all link.
-- `components/sections/education-awards-section.tsx`
-  - Main target for #63. Render all `siteContent.education` and all `siteContent.awards` within the compact two-column section instead of only the first item.
+  - Main target for #80. Replace the current timeline marker/dot/line layout with a compact single-line row list: date column on the left, title/content on the right, thin dividers between entries.
+  - Remove homepage rendering of news descriptions and venues for this simplified treatment unless the issue's wording requires title/content to include a short title only.
 - `components/sections/selected-publications-section.tsx`
-  - Main target for #64. Keep selected-publication filtering, but render one compact row per paper with thumbnail/title/authors/venue and right-aligned resource links.
-- `components/sections/experience-teaching-section.tsx`
-  - Main target for #65. Preserve two columns; tighten the experience timeline and teaching icon list.
-- `components/sections/services-section.tsx`
-  - Main target for #66. Preserve three service groups; tune icon size, column dividers, item spacing, and list density.
-- `components/sections/blogs-section.tsx`
-  - Main target for #67. Convert from horizontal cards to a compact News-style date/title timeline list, and ensure homepage ordering places it after Services.
+  - Main target for #81. Replace the outer shared `Card` plus inner `divide-y` container with one `Card` per selected publication and spacing between cards.
+  - Keep existing selected-publications filtering and resource link helpers.
+- `data/config.ts`
+  - Main content pointer update for #82. Change `siteContent.profile.avatar` to `/assets/profile-photo.png`, update alt text to describe the white smiling dog photo, and set dimensions to match the asset.
+- `public/assets/profile-photo.png`
+  - New repo-bundled image asset for #82. The uploaded/user-provided image should be committed here; do not introduce an upload flow.
 
 Shared types and data
-- Existing content types in `data/types.ts` are sufficient for the requested redesign.
-- Avoid data-shape changes unless a component needs an optional display field; if added, keep fields optional and update `data/config.ts` in the same issue.
-- Static assets in `public/assets` remain repo-bundled; no user-upload or object-storage feature is planned for these issues.
+- Existing `ImageAsset` in `data/types.ts` already supports `src`, `alt`, `width`, and `height`; #82 should not require type changes.
+- Existing `NewsItem` and `PublicationItem` types are sufficient for #80/#81; these are rendering changes, not data model changes.
+- Keep asset references root-relative (`/assets/...`) to continue working with `next/image` and files under `public/`.
 
-Issue dependencies and sequencing
-1. #59 should land first because it changes global spacing, card visual tokens, and homepage ordering assumptions used by every section.
-2. #60 and #68 can be implemented independently after #59 because they affect the global shell.
-3. #61 depends on #59 and should remove `AboutSection` from `app/page.tsx` while expanding `HeroSection`.
-4. #62, #63, #64, #65, and #66 are independent section-level layout changes once #59 is in place.
-5. #67 depends lightly on #59 for compact list styling and on final homepage order; implement after #66 if following the requested Blogs-last flow.
+Dependencies and sequencing
+1. #79 should land first because typography scale affects the visual density of every subsequent section change.
+2. #80 can follow #79; it depends only on the current news collection and section component.
+3. #81 can be implemented independently of #80 after #79, but should reuse the adjusted compact card/typography scale.
+4. #82 is independent of the layout issues, except that final visual review should happen after #79 so the new avatar is checked at the final rendered size.
 
 Key design decisions
-- Keep the redesign component-scoped: prefer adjusting each existing section component over introducing a new layout framework.
-- Keep all pages/server-rendered static where possible; no client state should be added except the existing theme toggle.
-- Preserve accessibility semantics: headings, `time` elements, `aria-label`s, visible focus outlines, and meaningful link text.
-- Preserve route behavior and existing `ViewAllLink` destinations.
-- Use responsive CSS grids/flex layouts that collapse to a single column on mobile while matching compact desktop reference density.
-- Avoid duplicating publication/blog/resource link logic where possible; if row layouts introduce repeated link pills, consider extracting small local helpers before adding broad new abstractions.
+- Prefer targeted edits to existing components rather than introducing new layout abstractions for these small UI changes.
+- Preserve route structure, static rendering, dark-mode classes, focus states, and responsive behavior.
+- Keep `Card`, `SectionHeading`, and content config as the main shared primitives instead of duplicating styling logic.
+- Treat the dog avatar as a static, committed asset; do not add S3/object-storage runtime code.
+- Maintain accessibility: descriptive image alt text, semantic headings, `time` elements for dates, and readable focus styles.
 
-Verification strategy for each issue
-- Run `npm run typecheck`, `npm run lint`, and `npm run build` after code changes.
-- Smoke check `/` plus any affected list page links.
-- For visual issues, inspect mobile and desktop widths and verify light/dark themes still have adequate contrast.
+Verification strategy
+- For each issue, run `npm run typecheck`, `npm run lint`, and `npm run build`.
+- Smoke check `/` after all visual changes.
+- For #80 and #81, inspect mobile and desktop widths to ensure rows/cards remain readable and dividers/spacing are correct.
+- For #82, confirm `public/assets/profile-photo.png` exists and the rendered avatar uses that file with meaningful alt text.
