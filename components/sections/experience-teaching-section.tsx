@@ -47,25 +47,25 @@ export function ExperienceTeachingSection() {
             <ViewAllLink href="/experience" label="View all" />
           </div>
 
-          <ol className="space-y-card">
+          <ol className="space-y-4">
             {experience.map((item, index) => (
-              <li className="relative pl-8" key={item.id}>
+              <li className="relative pl-6" key={item.id}>
                 {index < experience.length - 1 ? (
-                  <div className="absolute left-[5px] top-4 h-[calc(100%+1.5rem)] w-px bg-academic-border dark:bg-academic-dark-border" />
+                  <div className="absolute left-[4px] top-4 h-[calc(100%+1rem)] w-px bg-academic-border dark:bg-academic-dark-border" />
                 ) : null}
-                <div className="absolute left-0 top-2 h-3 w-3 rounded-full border-2 border-academic-bg-subtle bg-academic-accent dark:border-academic-dark-surface dark:bg-academic-dark-accent" />
+                <div className="absolute left-0 top-1.5 h-2.5 w-2.5 rounded-full border-2 border-academic-bg-subtle bg-academic-accent dark:border-academic-dark-surface dark:bg-academic-dark-accent" />
 
-                <p className="text-sm font-semibold text-academic-accent dark:text-academic-dark-accent">
+                <p className="text-xs font-semibold uppercase tracking-normal text-academic-accent dark:text-academic-dark-accent">
                   {experienceDates(item)}
                 </p>
-                <h4 className="mt-2 text-lg font-semibold text-academic-text dark:text-academic-dark-text">
+                <h4 className="mt-1 text-base font-semibold text-academic-text dark:text-academic-dark-text">
                   {item.role}
                 </h4>
                 <p className="mt-1 text-sm font-medium text-academic-muted dark:text-academic-dark-muted">
                   {joinText([item.organization, item.location])}
                 </p>
                 {item.description ? (
-                  <p className="mt-3 text-sm text-academic-muted dark:text-academic-dark-muted">
+                  <p className="mt-2 text-sm text-academic-muted dark:text-academic-dark-muted">
                     {item.description}
                   </p>
                 ) : null}
@@ -87,14 +87,14 @@ export function ExperienceTeachingSection() {
             <ViewAllLink href="/teaching" label="View all" />
           </div>
 
-          <ul className="space-y-card">
+          <ul className="divide-y divide-academic-border dark:divide-academic-dark-border">
             {teaching.map((item) => (
-              <li className="flex gap-card" key={item.id}>
-                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-card border border-academic-border bg-academic-accent-subtle text-academic-accent dark:border-academic-dark-border dark:bg-academic-dark-accent-soft dark:text-academic-dark-accent">
-                  <BookOpen aria-hidden="true" className="h-6 w-6" strokeWidth={1.8} />
+              <li className="flex gap-3 py-3 first:pt-0 last:pb-0" key={item.id}>
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-card border border-academic-border bg-academic-accent-subtle text-academic-accent dark:border-academic-dark-border dark:bg-academic-dark-accent-soft dark:text-academic-dark-accent">
+                  <BookOpen aria-hidden="true" className="h-5 w-5" strokeWidth={1.8} />
                 </div>
-                <div>
-                  <h4 className="text-lg font-semibold text-academic-text dark:text-academic-dark-text">
+                <div className="min-w-0">
+                  <h4 className="text-base font-semibold text-academic-text dark:text-academic-dark-text">
                     {item.courseTitle}
                   </h4>
                   <p className="mt-1 text-sm font-medium text-academic-accent dark:text-academic-dark-accent">
@@ -104,7 +104,7 @@ export function ExperienceTeachingSection() {
                     {teachingTerm(item)}
                   </p>
                   {item.description ? (
-                    <p className="mt-3 text-sm text-academic-muted dark:text-academic-dark-muted">
+                    <p className="mt-2 text-sm text-academic-muted dark:text-academic-dark-muted">
                       {item.description}
                     </p>
                   ) : null}
