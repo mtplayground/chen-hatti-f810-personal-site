@@ -1,5 +1,4 @@
 import {
-  AboutSection,
   BlogsSection,
   EducationAwardsSection,
   ExperienceTeachingSection,
@@ -13,7 +12,6 @@ export default function Home() {
   return (
     <main className="space-y-section">
       <HeroSection />
-      <AboutSection />
       <NewsTimelineSection />
       <EducationAwardsSection />
       <SelectedPublicationsSection />
