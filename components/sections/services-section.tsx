@@ -14,7 +14,7 @@ function serviceMeta(item: ServiceItem) {
 function ServiceIcon({ icon }: { icon?: ServiceGroup["icon"] }) {
   const Icon = icon === "BookOpen" ? BookOpen : icon === "MessagesSquare" ? MessagesSquare : Users;
 
-  return <Icon aria-hidden="true" className="h-7 w-7" strokeWidth={1.8} />;
+  return <Icon aria-hidden="true" className="h-5 w-5" strokeWidth={1.8} />;
 }
 
 export function ServicesSection() {
@@ -32,36 +32,36 @@ export function ServicesSection() {
       />
 
       <Card>
-        <div className="grid gap-card lg:grid-cols-3">
+        <div className="divide-y divide-academic-border lg:grid lg:grid-cols-3 lg:divide-x lg:divide-y-0 dark:divide-academic-dark-border">
           {services.map((group) => (
             <div
-              className="border-b border-academic-border pb-card last:border-b-0 last:pb-0 lg:border-b-0 lg:border-r lg:pb-0 lg:pr-card lg:last:border-r-0 lg:last:pr-0 dark:border-academic-dark-border"
+              className="py-card first:pt-0 last:pb-0 lg:px-card lg:py-0 lg:first:pl-0 lg:last:pr-0"
               key={group.id}
             >
-              <div className="mb-card flex items-center gap-4">
-                <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full border border-academic-border bg-academic-accent-subtle text-academic-accent dark:border-academic-dark-border dark:bg-academic-dark-accent-soft dark:text-academic-dark-accent">
+              <div className="mb-3 flex items-center gap-3">
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-card border border-academic-border bg-academic-accent-subtle text-academic-accent dark:border-academic-dark-border dark:bg-academic-dark-accent-soft dark:text-academic-dark-accent">
                   <ServiceIcon icon={group.icon} />
                 </div>
-                <h3 className="text-lg font-semibold text-academic-text dark:text-academic-dark-text">
+                <h3 className="text-base font-semibold text-academic-text dark:text-academic-dark-text">
                   {group.title}
                 </h3>
               </div>
 
-              <ul className="space-y-3">
+              <ul className="space-y-2">
                 {group.items.map((item) => (
-                  <li className="flex gap-3" key={item.id}>
+                  <li className="flex gap-2" key={item.id}>
                     <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-academic-accent dark:bg-academic-dark-accent" />
-                    <div>
+                    <div className="min-w-0">
                       <p className="text-sm font-semibold text-academic-text dark:text-academic-dark-text">
                         {item.title}
                       </p>
                       {serviceMeta(item) ? (
-                        <p className="mt-1 text-sm text-academic-muted dark:text-academic-dark-muted">
+                        <p className="mt-0.5 text-xs text-academic-muted dark:text-academic-dark-muted">
                           {serviceMeta(item)}
                         </p>
                       ) : null}
                       {item.description ? (
-                        <p className="mt-2 text-sm text-academic-muted dark:text-academic-dark-muted">
+                        <p className="mt-1.5 text-sm text-academic-muted dark:text-academic-dark-muted">
                           {item.description}
                         </p>
                       ) : null}
