@@ -4,11 +4,11 @@ import { SocialButton } from "../ui";
 export function Footer() {
   const { profile } = siteContent;
   const year = new Date().getFullYear();
-  const tagline = `${profile.title} - ${profile.affiliation}`;
+  const tagline = "Built with ❤️ and research.";
 
   return (
     <footer className="border-t border-academic-border bg-academic-bg-subtle dark:border-academic-dark-border dark:bg-academic-dark-bg">
-      <div className="mx-auto grid w-full max-w-[1200px] gap-4 px-site-x py-6 text-sm text-academic-muted sm:px-site-x-lg lg:grid-cols-3 lg:items-center">
+      <div className="mx-auto grid w-full max-w-[1200px] gap-3 px-site-x py-5 text-sm text-academic-muted sm:px-site-x-lg lg:grid-cols-3 lg:items-center">
         <p className="text-center lg:text-left">
           &copy; {year} {profile.name}
         </p>
