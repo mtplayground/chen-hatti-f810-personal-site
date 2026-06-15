@@ -6,7 +6,7 @@ interface CardProps extends ComponentPropsWithoutRef<"article"> {
 
 export function Card({ children, className, ...props }: CardProps) {
   const classes = [
-    "rounded-card border border-card bg-academic-surface p-card shadow-card transition-[border-color,box-shadow,transform] duration-200 hover:border-academic-accent/40 hover:shadow-card-hover motion-safe:hover:-translate-y-0.5 dark:border-card-dark dark:bg-academic-dark-surface dark:hover:border-academic-dark-accent/40",
+    "rounded-card border border-card bg-academic-surface p-card shadow-card transition-[border-color,box-shadow] duration-200 hover:border-academic-accent/30 hover:shadow-card-hover dark:border-card-dark dark:bg-academic-dark-surface dark:hover:border-academic-dark-accent/30",
     className
   ]
     .filter(Boolean)

@@ -17,9 +17,9 @@ export default function Home() {
       <NewsTimelineSection />
       <EducationAwardsSection />
       <SelectedPublicationsSection />
-      <BlogsSection />
       <ExperienceTeachingSection />
       <ServicesSection />
+      <BlogsSection />
     </main>
   );
 }

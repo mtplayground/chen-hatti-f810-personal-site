@@ -18,7 +18,7 @@ const config: Config = {
           "surface-muted": "#f8fafc",
           text: "#111827",
           muted: "#64748b",
-          border: "#e2e8f0",
+          border: "#e8eef6",
           accent: "#2563eb",
           "accent-hover": "#1d4ed8",
           "accent-soft": "#dbeafe",
@@ -29,30 +29,30 @@ const config: Config = {
           "dark-surface-muted": "#172033",
           "dark-text": "#f8fafc",
           "dark-muted": "#cbd5e1",
-          "dark-border": "#334155",
+          "dark-border": "#2b394d",
           "dark-accent": "#60a5fa",
           "dark-accent-hover": "#93c5fd",
           "dark-accent-soft": "#1e3a8a"
         }
       },
       borderColor: {
-        card: "#e2e8f0",
-        "card-dark": "#334155"
+        card: "#e8eef6",
+        "card-dark": "#2b394d"
       },
       borderRadius: {
-        card: "0.5rem"
+        card: "0.375rem"
       },
       boxShadow: {
-        card: "0 1px 2px rgb(15 23 42 / 0.06), 0 1px 3px rgb(15 23 42 / 0.08)",
-        "card-hover": "0 10px 24px rgb(15 23 42 / 0.10)"
+        card: "0 1px 1px rgb(15 23 42 / 0.035)",
+        "card-hover": "0 4px 12px rgb(15 23 42 / 0.06)"
       },
       spacing: {
         "site-x": "1.5rem",
         "site-x-lg": "2rem",
-        section: "4rem",
-        "section-sm": "2.5rem",
-        card: "1.5rem",
-        "card-lg": "2rem"
+        section: "1.25rem",
+        "section-sm": "1rem",
+        card: "1rem",
+        "card-lg": "1.25rem"
       }
     }
   },

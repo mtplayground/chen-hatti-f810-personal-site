@@ -7,7 +7,7 @@ interface ContainerProps {
 
 export function Container({ children, className }: ContainerProps) {
   const classes = [
-    "mx-auto w-full max-w-[1200px] px-site-x py-section-sm sm:px-site-x-lg lg:py-section",
+    "mx-auto w-full max-w-[1200px] px-site-x py-section-sm sm:px-site-x-lg",
     className
   ]
     .filter(Boolean)
