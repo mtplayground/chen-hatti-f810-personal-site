@@ -20,8 +20,8 @@ export const siteContent: SiteContent = {
       "Responsible computing"
     ],
     avatar: {
-      src: "/assets/profile-placeholder.svg",
-      alt: "Portrait of Your Name",
+      src: "/assets/profile-photo.png",
+      alt: "White smiling dog profile photo",
       width: 640,
       height: 640
     },
