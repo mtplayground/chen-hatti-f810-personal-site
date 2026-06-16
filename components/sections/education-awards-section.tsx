@@ -26,7 +26,7 @@ function EducationRow({ item }: { item: EducationItem }) {
       ) : null}
       <div className="min-w-0">
         <div className="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1">
-          <p className="text-base font-semibold text-academic-text dark:text-academic-dark-text">
+          <p className="text-sm font-semibold text-academic-text dark:text-academic-dark-text">
             {item.institution}
           </p>
           <p className="text-xs font-semibold uppercase tracking-normal text-academic-accent dark:text-academic-dark-accent">
@@ -54,7 +54,7 @@ function AwardRow({ item }: { item: AwardItem }) {
       </div>
       <div className="min-w-0">
         <div className="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1">
-          <p className="text-base font-semibold text-academic-text dark:text-academic-dark-text">
+          <p className="text-sm font-semibold text-academic-text dark:text-academic-dark-text">
             {item.title}
           </p>
           <p className="text-xs font-semibold uppercase tracking-normal text-academic-accent dark:text-academic-dark-accent">
@@ -92,7 +92,7 @@ export function EducationAwardsSection() {
         <Card className="h-full">
           <div className="mb-card flex items-start justify-between gap-4">
             <div>
-              <h3 className="text-xl font-semibold text-academic-text dark:text-academic-dark-text">
+              <h3 className="text-lg font-semibold text-academic-text dark:text-academic-dark-text">
                 Education
               </h3>
               <p className="mt-1 text-sm text-academic-muted dark:text-academic-dark-muted">
@@ -112,7 +112,7 @@ export function EducationAwardsSection() {
         <Card className="h-full">
           <div className="mb-card flex items-start justify-between gap-4">
             <div>
-              <h3 className="text-xl font-semibold text-academic-text dark:text-academic-dark-text">
+              <h3 className="text-lg font-semibold text-academic-text dark:text-academic-dark-text">
                 Awards
               </h3>
               <p className="mt-1 text-sm text-academic-muted dark:text-academic-dark-muted">

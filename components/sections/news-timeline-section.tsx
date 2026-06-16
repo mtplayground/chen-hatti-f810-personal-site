@@ -55,16 +55,16 @@ export function NewsTimelineSection() {
                   aria-hidden="true"
                   className="absolute left-0 top-2 h-3 w-3 rounded-full border-2 border-academic-bg-subtle bg-academic-accent sm:hidden dark:border-academic-dark-bg dark:bg-academic-dark-accent"
                 />
-                <h3 className="text-lg font-semibold leading-snug text-academic-text dark:text-academic-dark-text">
+                <h3 className="text-base font-semibold leading-snug text-academic-text dark:text-academic-dark-text">
                   {item.title}
                 </h3>
                 {item.description ? (
-                  <p className="mt-2 text-sm text-academic-muted dark:text-academic-dark-muted">
+                  <p className="mt-1.5 text-xs text-academic-muted dark:text-academic-dark-muted">
                     {item.description}
                   </p>
                 ) : null}
                 {item.venue ? (
-                  <p className="mt-3 text-sm">
+                  <p className="mt-2 text-xs">
                     {venueLink ? (
                       <a
                         aria-label={venueLink.ariaLabel}

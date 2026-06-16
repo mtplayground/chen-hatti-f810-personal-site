@@ -5,7 +5,7 @@ import type { PublicationItem } from "../../data/types";
 import { Card, SectionHeading, ViewAllLink } from "../ui";
 
 const visibleLinkClass =
-  "inline-flex items-center gap-1.5 rounded-full border border-academic-border px-3 py-1.5 text-sm font-semibold text-academic-accent no-underline transition-colors hover:border-academic-accent hover:text-academic-accent-hover focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-academic-accent dark:border-academic-dark-border dark:text-academic-dark-accent dark:hover:border-academic-dark-accent dark:hover:text-academic-dark-accent-hover dark:focus-visible:outline-academic-dark-accent";
+  "inline-flex items-center gap-1.5 rounded-full border border-academic-border px-2.5 py-1 text-xs font-semibold text-academic-accent no-underline transition-colors hover:border-academic-accent hover:text-academic-accent-hover focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-academic-accent dark:border-academic-dark-border dark:text-academic-dark-accent dark:hover:border-academic-dark-accent dark:hover:text-academic-dark-accent-hover dark:focus-visible:outline-academic-dark-accent";
 
 function selectedPublications() {
   const selected = siteContent.publications.filter((publication) => publication.selected);
@@ -31,7 +31,7 @@ function bibtexHref(publication: PublicationItem) {
 
 function PublicationAuthors({ publication }: { publication: PublicationItem }) {
   return (
-    <p className="mt-2 text-sm text-academic-muted dark:text-academic-dark-muted">
+    <p className="mt-1.5 text-xs text-academic-muted dark:text-academic-dark-muted">
       {publication.authors.map((author, index) => (
         <span key={`${publication.id}-${author.name}`}>
           <span
@@ -114,7 +114,7 @@ export function SelectedPublicationsSection() {
         <div className="divide-y divide-academic-border dark:divide-academic-dark-border">
           {publications.map((publication) => (
             <article
-              className="grid gap-card py-card first:pt-0 last:pb-0 md:grid-cols-[150px_minmax(0,1fr)] lg:grid-cols-[160px_minmax(0,1fr)_auto] lg:items-start"
+              className="grid gap-card py-3 first:pt-0 last:pb-0 md:grid-cols-[140px_minmax(0,1fr)] lg:grid-cols-[150px_minmax(0,1fr)_auto] lg:items-start"
               key={publication.id}
             >
               {publication.thumbnail ? (
@@ -123,7 +123,7 @@ export function SelectedPublicationsSection() {
                     alt={publication.thumbnail.alt}
                     className="object-cover"
                     fill
-                    sizes="(min-width: 1024px) 160px, (min-width: 768px) 150px, 100vw"
+                    sizes="(min-width: 1024px) 150px, (min-width: 768px) 140px, 100vw"
                     src={publication.thumbnail.src}
                   />
                 </div>
@@ -132,15 +132,15 @@ export function SelectedPublicationsSection() {
               )}
 
               <div className="min-w-0">
-                <h3 className="text-xl font-semibold leading-snug text-academic-accent dark:text-academic-dark-accent">
+                <h3 className="text-lg font-semibold leading-snug text-academic-accent dark:text-academic-dark-accent">
                   {publication.title}
                 </h3>
                 <PublicationAuthors publication={publication} />
-                <p className="mt-2 text-sm font-semibold text-academic-text dark:text-academic-dark-text">
+                <p className="mt-1.5 text-xs font-semibold text-academic-text dark:text-academic-dark-text">
                   {publication.venue} - {publication.year}
                 </p>
                 {publication.abstract ? (
-                  <p className="mt-3 text-sm text-academic-muted dark:text-academic-dark-muted">
+                  <p className="mt-2 text-xs text-academic-muted dark:text-academic-dark-muted">
                     {publication.abstract}
                   </p>
                 ) : null}

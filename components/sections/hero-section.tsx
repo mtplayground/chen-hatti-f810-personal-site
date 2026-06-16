@@ -51,22 +51,22 @@ export function HeroSection() {
           </div>
 
           <div className="flex flex-col justify-center">
-            <p className="text-sm font-semibold uppercase tracking-normal text-academic-accent dark:text-academic-dark-accent">
+            <p className="text-xs font-semibold uppercase tracking-normal text-academic-accent dark:text-academic-dark-accent">
               {profile.title}
             </p>
             <h1
-              className="mt-2 text-4xl font-bold leading-tight text-academic-text dark:text-academic-dark-text sm:text-5xl"
+              className="mt-2 text-3xl font-bold leading-tight text-academic-text dark:text-academic-dark-text sm:text-4xl"
               id="hero-heading"
             >
               {profile.name}
             </h1>
-            <p className="mt-2 text-lg font-medium text-academic-muted dark:text-academic-dark-muted">
+            <p className="mt-2 text-base font-medium text-academic-muted dark:text-academic-dark-muted">
               {profile.affiliation}
             </p>
-            <p className="mt-card max-w-2xl text-base text-academic-muted dark:text-academic-dark-muted">
+            <p className="mt-3 max-w-2xl text-sm text-academic-muted dark:text-academic-dark-muted">
               {profile.researchIntro}
             </p>
-            <div className="mt-3 space-y-3 text-base text-academic-muted dark:text-academic-dark-muted">
+            <div className="mt-2.5 space-y-2 text-sm text-academic-muted dark:text-academic-dark-muted">
               {profile.bio.map((paragraph) => (
                 <p key={paragraph}>{paragraph}</p>
               ))}

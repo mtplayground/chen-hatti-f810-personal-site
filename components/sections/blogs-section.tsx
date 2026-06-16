@@ -50,7 +50,7 @@ export function BlogsSection() {
 
               <div className="min-w-0">
                 <div className="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1">
-                  <h3 className="text-lg font-semibold leading-snug text-academic-text transition-colors group-hover:text-academic-accent dark:text-academic-dark-text dark:group-hover:text-academic-dark-accent">
+                  <h3 className="text-base font-semibold leading-snug text-academic-text transition-colors group-hover:text-academic-accent dark:text-academic-dark-text dark:group-hover:text-academic-dark-accent">
                     {blog.title}
                   </h3>
                   {blog.readingTime ? (
@@ -59,7 +59,7 @@ export function BlogsSection() {
                     </span>
                   ) : null}
                 </div>
-                <p className="mt-2 text-sm text-academic-muted dark:text-academic-dark-muted">
+                <p className="mt-1.5 text-xs text-academic-muted dark:text-academic-dark-muted">
                   {blog.excerpt}
                 </p>
               </div>
