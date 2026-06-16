@@ -110,13 +110,10 @@ export function SelectedPublicationsSection() {
         title="Selected Publications"
       />
 
-      <Card>
-        <div className="divide-y divide-academic-border dark:divide-academic-dark-border">
-          {publications.map((publication) => (
-            <article
-              className="grid gap-card py-3 first:pt-0 last:pb-0 md:grid-cols-[140px_minmax(0,1fr)] lg:grid-cols-[150px_minmax(0,1fr)_auto] lg:items-start"
-              key={publication.id}
-            >
+      <ol className="space-y-card">
+        {publications.map((publication) => (
+          <li key={publication.id}>
+            <Card className="grid gap-card md:grid-cols-[140px_minmax(0,1fr)] lg:grid-cols-[150px_minmax(0,1fr)_auto] lg:items-start">
               {publication.thumbnail ? (
                 <div className="relative aspect-[16/10] overflow-hidden rounded-card border border-academic-border bg-academic-bg-subtle dark:border-academic-dark-border dark:bg-academic-dark-surface-muted">
                   <Image
@@ -149,10 +146,10 @@ export function SelectedPublicationsSection() {
               <div className="lg:min-w-28">
                 <PublicationLinks publication={publication} />
               </div>
-            </article>
-          ))}
-        </div>
-      </Card>
+            </Card>
+          </li>
+        ))}
+      </ol>
     </section>
   );
 }
