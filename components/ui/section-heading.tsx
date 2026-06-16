@@ -16,7 +16,7 @@ export function SectionHeading({
   className
 }: SectionHeadingProps) {
   const classes = [
-    "mb-card flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between",
+    "mb-3 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between",
     className
   ]
     .filter(Boolean)
@@ -26,16 +26,16 @@ export function SectionHeading({
     <div className={classes}>
       <div>
         {eyebrow ? (
-          <p className="mb-2 text-sm font-semibold uppercase tracking-normal text-academic-accent dark:text-academic-dark-accent">
+          <p className="mb-1.5 text-xs font-semibold uppercase tracking-normal text-academic-accent dark:text-academic-dark-accent">
             {eyebrow}
           </p>
         ) : null}
-        <h2 className="text-2xl font-bold text-academic-text dark:text-academic-dark-text">
+        <h2 className="text-xl font-bold text-academic-text dark:text-academic-dark-text">
           {title}
         </h2>
-        <div className="mt-3 h-1 w-12 rounded-full bg-academic-accent dark:bg-academic-dark-accent" />
+        <div className="mt-2 h-0.5 w-10 rounded-full bg-academic-accent dark:bg-academic-dark-accent" />
         {description ? (
-          <p className="mt-4 max-w-3xl text-base text-academic-muted dark:text-academic-dark-muted">
+          <p className="mt-3 max-w-3xl text-sm text-academic-muted dark:text-academic-dark-muted">
             {description}
           </p>
         ) : null}

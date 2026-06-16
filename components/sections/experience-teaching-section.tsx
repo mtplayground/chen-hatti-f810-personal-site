@@ -37,7 +37,7 @@ export function ExperienceTeachingSection() {
         <Card className="h-full">
           <div className="mb-card flex items-start justify-between gap-4">
             <div>
-              <h3 className="text-xl font-semibold text-academic-text dark:text-academic-dark-text">
+              <h3 className="text-lg font-semibold text-academic-text dark:text-academic-dark-text">
                 Experience
               </h3>
               <p className="mt-1 text-sm text-academic-muted dark:text-academic-dark-muted">
@@ -58,7 +58,7 @@ export function ExperienceTeachingSection() {
                 <p className="text-xs font-semibold uppercase tracking-normal text-academic-accent dark:text-academic-dark-accent">
                   {experienceDates(item)}
                 </p>
-                <h4 className="mt-1 text-base font-semibold text-academic-text dark:text-academic-dark-text">
+                <h4 className="mt-1 text-sm font-semibold text-academic-text dark:text-academic-dark-text">
                   {item.role}
                 </h4>
                 <p className="mt-1 text-sm font-medium text-academic-muted dark:text-academic-dark-muted">
@@ -77,7 +77,7 @@ export function ExperienceTeachingSection() {
         <Card className="h-full">
           <div className="mb-card flex items-start justify-between gap-4">
             <div>
-              <h3 className="text-xl font-semibold text-academic-text dark:text-academic-dark-text">
+              <h3 className="text-lg font-semibold text-academic-text dark:text-academic-dark-text">
                 Teaching
               </h3>
               <p className="mt-1 text-sm text-academic-muted dark:text-academic-dark-muted">
@@ -94,7 +94,7 @@ export function ExperienceTeachingSection() {
                   <BookOpen aria-hidden="true" className="h-5 w-5" strokeWidth={1.8} />
                 </div>
                 <div className="min-w-0">
-                  <h4 className="text-base font-semibold text-academic-text dark:text-academic-dark-text">
+                  <h4 className="text-sm font-semibold text-academic-text dark:text-academic-dark-text">
                     {item.courseTitle}
                   </h4>
                   <p className="mt-1 text-sm font-medium text-academic-accent dark:text-academic-dark-accent">
